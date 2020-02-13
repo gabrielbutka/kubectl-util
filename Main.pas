@@ -82,6 +82,14 @@ begin
   Resultado := ExecutarComando(CMD_CURRENT_CONTEXT);
   cbxContext.ItemIndex := cbxContext.Items.IndexOf(Trim(Resultado.Text));
   cbxContextChange(Sender);
+
+  {$IFDEF Windows}
+    cbxNameSpace.AutoDropDown := True;
+  {$ENDIF Windows}
+
+  {$IFDEF Unix}
+    cbxNameSpace.AutoDropDown := False;
+  {$ENDIF Unix}
 end;
 
 procedure TfrmPrincipal.cbxContextChange(Sender: TObject);

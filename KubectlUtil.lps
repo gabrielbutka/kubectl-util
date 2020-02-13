@@ -9,7 +9,7 @@
         <Filename Value="KubectlUtil.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="29"/>
       </Unit0>
       <Unit1>
         <Filename Value="Main.pas"/>
@@ -18,10 +18,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="319"/>
-        <CursorPos X="31" Y="325"/>
-        <UsageCount Value="28"/>
+        <TopLine Value="211"/>
+        <CursorPos X="30" Y="222"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="C:\Lazarus\lcl\forms.pp"/>
@@ -52,9 +53,6 @@
         <UsageCount Value="11"/>
       </Unit5>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>

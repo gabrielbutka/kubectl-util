@@ -3342,7 +3342,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 200
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
-    AutoDropDown = True
     ItemHeight = 15
     OnEditingDone = cbxNameSpaceChange
     TabOrder = 1

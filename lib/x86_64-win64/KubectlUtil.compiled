@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <Compiler Value="C:\Lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1313017496"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiC:\Users\Gabriel\Desktop\kubectl-util\lib\x86_64-win64 -FuC:\Lazarus\components\lazcontrols\lib\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64 -FuC:\Lazarus\components\lazutils\lib\x86_64-win64 -FuC:\Lazarus\packager\units\x86_64-win64 -FuC:\Users\Gabriel\Desktop\kubectl-util\ -FUC:\Users\Gabriel\Desktop\kubectl-util\lib\x86_64-win64\ -FEC:\Users\Gabriel\Desktop\kubectl-util\ -oC:\Users\Gabriel\Desktop\kubectl-util\KubectlUtil.exe -dLCL -dLCLwin32 KubectlUtil.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiC:\Users\Gabriel\Projetos\kubectl-util\lib\x86_64-win64 -FuC:\Lazarus\components\lazcontrols\lib\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64 -FuC:\Lazarus\components\lazutils\lib\x86_64-win64 -FuC:\Lazarus\packager\units\x86_64-win64 -FuC:\Users\Gabriel\Projetos\kubectl-util\ -FUC:\Users\Gabriel\Projetos\kubectl-util\lib\x86_64-win64\ -FEC:\Users\Gabriel\Projetos\kubectl-util\ -oC:\Users\Gabriel\Projetos\kubectl-util\KubectlUtil.exe -dLCL -dLCLwin32 KubectlUtil.lpr"/>
 </CONFIG>
