@@ -60,7 +60,13 @@ const
 
   BUFFER_SIZE = 4096;
 
-  CONECT_DB_DEFAULT_PORT = '6666';
+  {$IFDEF Windows}
+    CONECT_DB_DEFAULT_PORT = '666';
+  {$ENDIF Windows}
+
+  {$IFDEF Unix}
+    CONECT_DB_DEFAULT_PORT = '6666';
+  {$ENDIF Unix}
 
 implementation
 
