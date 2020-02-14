@@ -43,7 +43,6 @@ type
 
 var
   frmPrincipal: TfrmPrincipal;
-  CMD_EXE: string;
 
 const
   CMD_GET_CONTEXTS = 'kubectl config get-contexts -o=name';
@@ -73,8 +72,6 @@ procedure TfrmPrincipal.FormCreate(Sender: TObject);
 var
   Resultado: TStringList;
 begin
-  CMD_EXE := SysUtils.GetEnvironmentVariable('ComSpec');
-
   Resultado := ExecutarComando(CMD_GET_CONTEXTS);
   cbxContext.Items.AddStrings(Resultado);
   FreeAndNil(Resultado);
@@ -297,14 +294,14 @@ var
 begin
   Process := TProcess.Create(nil);
   {$IFDEF Windows}
-    Process.Executable := CMD_EXE;
+    Process.Executable := 'cmd.exe';
     Process.ShowWindow := swoHIDE;
     Process.Parameters.Add('/c');
     Process.Parameters.Add(Comando);
   {$ENDIF Windows}
 
   {$IFDEF Unix}
-    Process.Executable := '/bin/bash';
+    Process.Executable := 'bash';
     Process.Parameters.Add('-c');
     Process.Parameters.Add(Comando);
   {$ENDIF Unix}
@@ -341,7 +338,7 @@ begin
   {$ENDIF Windows}
 
   {$IFDEF Unix}
-    Process.Executable := '/bin/xterm';
+    Process.Executable := 'xterm';
     if (Keep) then
        Process.Parameters.Add('-hold');
     Process.Parameters.Add('-e');

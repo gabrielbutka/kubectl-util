@@ -3308,47 +3308,47 @@ object frmPrincipal: TfrmPrincipal
   }
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object lblContext: TLabel
     Left = 16
-    Height = 15
+    Height = 17
     Top = 8
-    Width = 41
+    Width = 43
     Caption = 'Context'
     ParentColor = False
   end
   object cbxContext: TComboBox
     Left = 16
-    Height = 23
+    Height = 29
     Top = 24
     Width = 367
-    ItemHeight = 15
+    ItemHeight = 0
     OnChange = cbxContextChange
     Style = csDropDownList
     TabOrder = 0
   end
   object lblNameSpace: TLabel
     Left = 392
-    Height = 15
+    Height = 17
     Top = 8
-    Width = 63
+    Width = 68
     Caption = 'NameSpace'
     ParentColor = False
   end
   object cbxNameSpace: TComboBox
     Left = 392
-    Height = 23
+    Height = 27
     Top = 24
     Width = 200
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
-    ItemHeight = 15
+    ItemHeight = 0
     OnEditingDone = cbxNameSpaceChange
     TabOrder = 1
   end
   object lblPod: TLabel
     Left = 16
-    Height = 15
+    Height = 17
     Top = 56
     Width = 21
     Caption = 'Pod'
@@ -3356,17 +3356,17 @@ object frmPrincipal: TfrmPrincipal
   end
   object cbxPod: TComboBox
     Left = 16
-    Height = 23
+    Height = 29
     Top = 72
     Width = 367
-    ItemHeight = 15
+    ItemHeight = 0
     OnChange = cbxPodChange
     Style = csDropDownList
     TabOrder = 2
   end
   object lblLog: TLabel
     Left = 392
-    Height = 15
+    Height = 17
     Top = 56
     Width = 20
     Caption = 'Log'
@@ -3374,10 +3374,10 @@ object frmPrincipal: TfrmPrincipal
   end
   object cbxLog: TComboBox
     Left = 392
-    Height = 23
+    Height = 29
     Top = 72
     Width = 200
-    ItemHeight = 15
+    ItemHeight = 0
     OnChange = cbxLogChange
     Style = csDropDownList
     TabOrder = 3
