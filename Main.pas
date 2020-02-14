@@ -338,7 +338,7 @@ begin
   Process := TProcess.Create(nil);
 
   {$IFDEF Windows}
-    Process.Executable := CMD_EXE;
+    Process.Executable := 'cmd.exe';
     Process.Parameters.Add(IfThen(Keep, '/k', '/c'));
     Process.Parameters.Add(Comando);
   {$ENDIF Windows}
