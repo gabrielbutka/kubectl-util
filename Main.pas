@@ -168,13 +168,14 @@ begin
       Continue;
     end;
 
-    if Pos('Running', Pod) = 0 then
+    if (Pos('Running', Pod) = 0) and (Pos('Pending', Pod) = 0) then
     begin
       Resultado.Delete(i);
       Continue;
     end;
 
     Resultado[i] := Trim(ReplaceStr(Resultado[i], 'Running', ''));
+    Resultado[i] := ReplaceStr(Resultado[i], 'Pending', '');
   end;
 
   cbxPod.Items.AddStrings(Resultado);
@@ -199,7 +200,7 @@ begin
   btnConectarDB.Enabled := Pos('postgres', Pod) > 0;
   btnConectarBash.Enabled := Pod <> '';
 
-  if (NameSpace <> '') and (Pod <> '') then
+  if (NameSpace <> '') and (Pod <> '') and (Pos('tomcat', Pod) > 0) then
     Resultado := ExecutarComando(Format(CMD_GET_LOGS, [NameSpace, Pod]))
   else
     Resultado := TStringList.Create;

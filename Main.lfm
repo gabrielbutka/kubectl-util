@@ -1,12 +1,12 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 375
+  Left = 408
   Height = 146
-  Top = 212
-  Width = 603
+  Top = 218
+  Width = 657
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Kubectl Util'
   ClientHeight = 146
-  ClientWidth = 603
+  ClientWidth = 657
   Icon.Data = {
     119C01000000010006000000000001002000A316000066000000808000000100
     20002808010009170000404000000100200028420000311F0100303000000100
@@ -3308,47 +3308,47 @@ object frmPrincipal: TfrmPrincipal
   }
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.6.0'
   object lblContext: TLabel
     Left = 16
-    Height = 17
+    Height = 15
     Top = 8
-    Width = 43
+    Width = 42
     Caption = 'Context'
     ParentColor = False
   end
   object cbxContext: TComboBox
     Left = 16
-    Height = 29
+    Height = 23
     Top = 24
-    Width = 367
-    ItemHeight = 0
+    Width = 398
+    ItemHeight = 15
     OnChange = cbxContextChange
     Style = csDropDownList
     TabOrder = 0
   end
   object lblNameSpace: TLabel
-    Left = 392
-    Height = 17
+    Left = 424
+    Height = 15
     Top = 8
-    Width = 68
+    Width = 63
     Caption = 'NameSpace'
     ParentColor = False
   end
   object cbxNameSpace: TComboBox
-    Left = 392
-    Height = 27
+    Left = 424
+    Height = 23
     Top = 24
-    Width = 200
+    Width = 216
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
-    ItemHeight = 0
+    ItemHeight = 15
     OnEditingDone = cbxNameSpaceChange
     TabOrder = 1
   end
   object lblPod: TLabel
     Left = 16
-    Height = 17
+    Height = 15
     Top = 56
     Width = 21
     Caption = 'Pod'
@@ -3356,28 +3356,28 @@ object frmPrincipal: TfrmPrincipal
   end
   object cbxPod: TComboBox
     Left = 16
-    Height = 29
+    Height = 23
     Top = 72
-    Width = 367
-    ItemHeight = 0
+    Width = 398
+    ItemHeight = 15
     OnChange = cbxPodChange
     Style = csDropDownList
     TabOrder = 2
   end
   object lblLog: TLabel
-    Left = 392
-    Height = 17
+    Left = 424
+    Height = 15
     Top = 56
     Width = 20
     Caption = 'Log'
     ParentColor = False
   end
   object cbxLog: TComboBox
-    Left = 392
-    Height = 29
+    Left = 424
+    Height = 23
     Top = 72
-    Width = 200
-    ItemHeight = 0
+    Width = 216
+    ItemHeight = 15
     OnChange = cbxLogChange
     Style = csDropDownList
     TabOrder = 3
@@ -3386,47 +3386,47 @@ object frmPrincipal: TfrmPrincipal
     Left = 16
     Height = 25
     Top = 112
-    Width = 111
+    Width = 121
     Caption = 'Visualizar Log'
     Enabled = False
     OnClick = btnVisualizarLogClick
     TabOrder = 4
   end
   object btnSalvarLog: TButton
-    Left = 132
+    Left = 141
     Height = 25
     Top = 112
-    Width = 111
+    Width = 121
     Caption = 'Salvar Log'
     Enabled = False
     OnClick = btnSalvarLogClick
     TabOrder = 5
   end
   object btnDescribe: TButton
-    Left = 249
+    Left = 269
     Height = 25
     Top = 112
-    Width = 111
+    Width = 121
     Caption = 'Describe'
     Enabled = False
     OnClick = btnDescribeClick
     TabOrder = 6
   end
   object btnConectarBash: TButton
-    Left = 365
+    Left = 394
     Height = 25
     Top = 112
-    Width = 111
+    Width = 121
     Caption = 'Conectar Bash'
     Enabled = False
     OnClick = btnConectarBashClick
     TabOrder = 7
   end
   object btnConectarDB: TButton
-    Left = 481
+    Left = 519
     Height = 25
     Top = 112
-    Width = 111
+    Width = 121
     Caption = 'Conectar DB'
     Enabled = False
     OnClick = btnConectarDBClick
@@ -3436,7 +3436,7 @@ object frmPrincipal: TfrmPrincipal
     DefaultExt = '.*.log'
     Filter = 'Arquivos de Log (*.log)|*.log'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 553
+    left = 597
     top = 80
   end
 end

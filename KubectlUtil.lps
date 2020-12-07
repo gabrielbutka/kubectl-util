@@ -9,6 +9,8 @@
         <Filename Value="KubectlUtil.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <CursorPos X="51" Y="12"/>
         <UsageCount Value="34"/>
       </Unit0>
       <Unit1>
@@ -18,8 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="328"/>
-        <CursorPos X="33" Y="346"/>
+        <TopLine Value="162"/>
+        <CursorPos X="7" Y="175"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -53,12 +55,7 @@
         <UsageCount Value="10"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="1">
-      <Position1>
-        <Filename Value="Main.pas"/>
-        <Caret Line="308" Column="31" TopLine="296"/>
-      </Position1>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>
