@@ -55,7 +55,8 @@ const
   CMD_DESCRIBE_COMPLETE = 'kubectl describe pods --namespace %s %s';
   CMD_LOG_VIEW = 'kubectl exec --namespace %s %s -- tail -f --bytes=1G %s';
   CMD_LOG_SAVE = 'kubectl exec --namespace %s %s -- tail --bytes=1G %s';
-  CMD_CONECT_DB = 'kubectl port-forward --namespace %s %s %d:5432';
+  CMD_CONECT_POSTGRES_DB = 'kubectl port-forward --namespace %s %s %d:5432';
+  CMD_CONECT_REDIS_DB = 'kubectl port-forward --namespace %s %s %d:6379';
   CMD_CONECT_BASH = 'kubectl exec --namespace %s -it %s bash';
 
   BUFFER_SIZE = 4096;
@@ -197,7 +198,7 @@ begin
   Pod := cbxPod.Text;
 
   btnDescribe.Enabled := Pod <> '';
-  btnConectarDB.Enabled := Pos('postgres', Pod) > 0;
+  btnConectarDB.Enabled := (Pos('postgres', Pod) > 0) or (Pos('redis', Pod) > 0);
   btnConectarBash.Enabled := Pod <> '';
 
   if (NameSpace <> '') and (Pod <> '') and (Pos('tomcat', Pod) > 0) then
@@ -271,9 +272,23 @@ end;
 
 procedure TfrmPrincipal.btnConectarDBClick(Sender: TObject);
 var
-  Porta, NameSpace, Pod: string;
+  Porta, NameSpace, Pod, Comando: string;
   RegExpr: TRegExpr;
 begin
+  NameSpace := cbxNameSpace.Text;
+  Pod := cbxPod.Text;
+
+  if (Pos('postgres', Pod) > 0) then
+     Comando := CMD_CONECT_POSTGRES_DB
+  else if (Pos('redis', Pod) > 0) then
+     Comando := CMD_CONECT_REDIS_DB;
+
+  if (Comando.IsEmpty) then
+  begin
+    Application.MessageBox('Não é possível conectar ao pod selecionado!', 'Erro', MB_ICONERROR);
+    Exit;
+  end;
+
   Porta := CONECT_DB_DEFAULT_PORT;
 
   if not InputQuery(Caption, 'Informe a porta local: ', Porta) then
@@ -287,9 +302,7 @@ begin
   end;
   FreeAndNil(RegExpr);
 
-  NameSpace := cbxNameSpace.Text;
-  Pod := cbxPod.Text;
-  ExecutarComandoSemRetorno(Format(CMD_CONECT_DB, [NameSpace, Pod, StrToInt(Porta)]));
+  ExecutarComandoSemRetorno(Format(Comando, [NameSpace, Pod, StrToInt(Porta)]));
 end;
 
 function TfrmPrincipal.ExecutarComando(Comando: string): TStringList;

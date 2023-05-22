@@ -3308,7 +3308,7 @@ object frmPrincipal: TfrmPrincipal
   }
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.12.0'
   object lblContext: TLabel
     Left = 16
     Height = 15
@@ -3316,6 +3316,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 42
     Caption = 'Context'
     ParentColor = False
+    ParentFont = False
   end
   object cbxContext: TComboBox
     Left = 16
@@ -3324,6 +3325,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 398
     ItemHeight = 15
     OnChange = cbxContextChange
+    ParentFont = False
     Style = csDropDownList
     TabOrder = 0
   end
@@ -3334,6 +3336,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 63
     Caption = 'NameSpace'
     ParentColor = False
+    ParentFont = False
   end
   object cbxNameSpace: TComboBox
     Left = 424
@@ -3344,6 +3347,7 @@ object frmPrincipal: TfrmPrincipal
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
     ItemHeight = 15
     OnEditingDone = cbxNameSpaceChange
+    ParentFont = False
     TabOrder = 1
   end
   object lblPod: TLabel
@@ -3353,6 +3357,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 21
     Caption = 'Pod'
     ParentColor = False
+    ParentFont = False
   end
   object cbxPod: TComboBox
     Left = 16
@@ -3361,6 +3366,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 398
     ItemHeight = 15
     OnChange = cbxPodChange
+    ParentFont = False
     Style = csDropDownList
     TabOrder = 2
   end
@@ -3371,6 +3377,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 20
     Caption = 'Log'
     ParentColor = False
+    ParentFont = False
   end
   object cbxLog: TComboBox
     Left = 424
@@ -3379,6 +3386,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 216
     ItemHeight = 15
     OnChange = cbxLogChange
+    ParentFont = False
     Style = csDropDownList
     TabOrder = 3
   end
@@ -3390,6 +3398,7 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Visualizar Log'
     Enabled = False
     OnClick = btnVisualizarLogClick
+    ParentFont = False
     TabOrder = 4
   end
   object btnSalvarLog: TButton
@@ -3400,6 +3409,7 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Salvar Log'
     Enabled = False
     OnClick = btnSalvarLogClick
+    ParentFont = False
     TabOrder = 5
   end
   object btnDescribe: TButton
@@ -3410,6 +3420,7 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Describe'
     Enabled = False
     OnClick = btnDescribeClick
+    ParentFont = False
     TabOrder = 6
   end
   object btnConectarBash: TButton
@@ -3420,6 +3431,7 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Conectar Bash'
     Enabled = False
     OnClick = btnConectarBashClick
+    ParentFont = False
     TabOrder = 7
   end
   object btnConectarDB: TButton
@@ -3430,13 +3442,14 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Conectar DB'
     Enabled = False
     OnClick = btnConectarDBClick
+    ParentFont = False
     TabOrder = 8
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '.*.log'
     Filter = 'Arquivos de Log (*.log)|*.log'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 597
-    top = 80
+    Left = 597
+    Top = 80
   end
 end
