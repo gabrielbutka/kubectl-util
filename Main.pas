@@ -5,7 +5,8 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Dialogs, StdCtrls, LCLType, StrUtils, RegExpr, Process;
+  Classes, SysUtils, Forms, Controls, Dialogs, StdCtrls, LCLType, Buttons,
+  StrUtils, RegExpr, Process;
 
 type
 
@@ -17,6 +18,7 @@ type
     btnDescribe: TButton;
     btnConectarBash: TButton;
     btnConectarDB: TButton;
+    btnAtualizarLogs: TButton;
     cbxContext: TComboBox;
     cbxNameSpace: TComboBox;
     cbxPod: TComboBox;
@@ -26,6 +28,7 @@ type
     lblNameSpace: TLabel;
     lblContext: TLabel;
     SaveDialog: TSaveDialog;
+    procedure btnAtualizarLogsClick(Sender: TObject);
     procedure btnConectarBashClick(Sender: TObject);
     procedure btnConectarDBClick(Sender: TObject);
     procedure btnDescribeClick(Sender: TObject);
@@ -55,7 +58,7 @@ const
   CMD_DESCRIBE_COMPLETE = 'kubectl describe pods --namespace %s %s';
   CMD_LOG_VIEW = 'kubectl exec --namespace %s %s -- tail -f --bytes=1G %s';
   CMD_LOG_SAVE = 'kubectl exec --namespace %s %s -- tail --bytes=1G %s';
-  CMD_CONECT_POSTGRES_DB = 'kubectl port-forward --namespace %s %s %d:5432';
+  CMD_CONECT_DB = 'kubectl port-forward --namespace %s %s %d:5432';
   CMD_CONECT_REDIS_DB = 'kubectl port-forward --namespace %s %s %d:6379';
   CMD_CONECT_BASH = 'kubectl exec --namespace %s -it %s bash';
 
@@ -198,10 +201,12 @@ begin
   Pod := cbxPod.Text;
 
   btnDescribe.Enabled := Pod <> '';
-  btnConectarDB.Enabled := (Pos('postgres', Pod) > 0) or (Pos('redis', Pod) > 0);
+  btnConectarDB.Enabled := (Pos('postgres', Pod) > 0) or (Pos('redis', Pod) > 0) or (Pos('cloudnativepg', Pod) > 0);
   btnConectarBash.Enabled := Pod <> '';
 
-  if (NameSpace <> '') and (Pod <> '') and (Pos('tomcat', Pod) > 0) then
+  showmessage(Format(CMD_GET_LOGS, [NameSpace, Pod]));
+
+  if (NameSpace <> '') and (Pod <> '') then
     Resultado := ExecutarComando(Format(CMD_GET_LOGS, [NameSpace, Pod]))
   else
     Resultado := TStringList.Create;
@@ -215,6 +220,7 @@ begin
 
   cbxLog.Items.AddStrings(Resultado);
   cbxLog.Enabled := Resultado.Count > 0;
+  btnAtualizarLogs.Enabled := Resultado.Count > 0;
   FreeAndNil(Resultado);
 
   cbxLogChange(Sender);
@@ -270,6 +276,11 @@ begin
   ExecutarComandoSemRetorno(Format(CMD_CONECT_BASH, [NameSpace, Pod]));
 end;
 
+procedure TfrmPrincipal.btnAtualizarLogsClick(Sender: TObject);
+begin
+  cbxPodChange(Sender);
+end;
+
 procedure TfrmPrincipal.btnConectarDBClick(Sender: TObject);
 var
   Porta, NameSpace, Pod, Comando: string;
@@ -278,10 +289,10 @@ begin
   NameSpace := cbxNameSpace.Text;
   Pod := cbxPod.Text;
 
-  if (Pos('postgres', Pod) > 0) then
-     Comando := CMD_CONECT_POSTGRES_DB
-  else if (Pos('redis', Pod) > 0) then
-     Comando := CMD_CONECT_REDIS_DB;
+  if (Pos('redis', Pod) > 0) then
+     Comando := CMD_CONECT_REDIS_DB
+  else
+     Comando := CMD_CONECT_DB;
 
   if (Comando.IsEmpty) then
   begin

@@ -1,12 +1,12 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 408
-  Height = 146
-  Top = 218
-  Width = 657
+  Left = 462
+  Height = 153
+  Top = 233
+  Width = 656
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Kubectl Util'
-  ClientHeight = 146
-  ClientWidth = 657
+  ClientHeight = 153
+  ClientWidth = 656
   Icon.Data = {
     119C01000000010006000000000001002000A316000066000000808000000100
     20002808010009170000404000000100200028420000311F0100303000000100
@@ -3313,7 +3313,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 16
     Height = 15
     Top = 8
-    Width = 42
+    Width = 41
     Caption = 'Context'
     ParentColor = False
     ParentFont = False
@@ -3322,7 +3322,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 16
     Height = 23
     Top = 24
-    Width = 398
+    Width = 400
     ItemHeight = 15
     OnChange = cbxContextChange
     ParentFont = False
@@ -3363,7 +3363,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 16
     Height = 23
     Top = 72
-    Width = 398
+    Width = 400
     ItemHeight = 15
     OnChange = cbxPodChange
     ParentFont = False
@@ -3394,7 +3394,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 16
     Height = 25
     Top = 112
-    Width = 121
+    Width = 100
     Caption = 'Visualizar Log'
     Enabled = False
     OnClick = btnVisualizarLogClick
@@ -3402,10 +3402,10 @@ object frmPrincipal: TfrmPrincipal
     TabOrder = 4
   end
   object btnSalvarLog: TButton
-    Left = 141
+    Left = 120
     Height = 25
     Top = 112
-    Width = 121
+    Width = 100
     Caption = 'Salvar Log'
     Enabled = False
     OnClick = btnSalvarLogClick
@@ -3413,37 +3413,47 @@ object frmPrincipal: TfrmPrincipal
     TabOrder = 5
   end
   object btnDescribe: TButton
-    Left = 269
+    Left = 328
     Height = 25
     Top = 112
-    Width = 121
+    Width = 102
     Caption = 'Describe'
     Enabled = False
     OnClick = btnDescribeClick
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 7
   end
   object btnConectarBash: TButton
-    Left = 394
+    Left = 434
     Height = 25
     Top = 112
-    Width = 121
+    Width = 102
     Caption = 'Conectar Bash'
     Enabled = False
     OnClick = btnConectarBashClick
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 8
   end
   object btnConectarDB: TButton
-    Left = 519
+    Left = 538
     Height = 25
     Top = 112
-    Width = 121
+    Width = 102
     Caption = 'Conectar DB'
     Enabled = False
     OnClick = btnConectarDBClick
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 9
+  end
+  object btnAtualizarLogs: TButton
+    Left = 224
+    Height = 25
+    Top = 112
+    Width = 102
+    Caption = 'Atualizar Logs'
+    Enabled = False
+    OnClick = btnAtualizarLogsClick
+    TabOrder = 6
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '.*.log'
