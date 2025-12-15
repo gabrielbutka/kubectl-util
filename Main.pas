@@ -204,8 +204,6 @@ begin
   btnConectarDB.Enabled := (Pos('postgres', Pod) > 0) or (Pos('redis', Pod) > 0) or (Pos('cloudnativepg', Pod) > 0);
   btnConectarBash.Enabled := Pod <> '';
 
-  showmessage(Format(CMD_GET_LOGS, [NameSpace, Pod]));
-
   if (NameSpace <> '') and (Pod <> '') then
     Resultado := ExecutarComando(Format(CMD_GET_LOGS, [NameSpace, Pod]))
   else
